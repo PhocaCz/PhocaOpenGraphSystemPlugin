@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension group="system" method="upgrade" type="plugin" version="3">
 	<name>plg_system_phoca_open_graph</name>
-	<creationDate>05/07/2016</creationDate>
+	<creationDate>25/10/2017</creationDate>
 	<author>Jan Pavelka (www.phoca.cz)</author>
 	<authorEmail></authorEmail>
 	<authorUrl>www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>3.0.0</version>
+	<version>3.0.3</version>
 	
 	<description>PLG_SYSTEM_PHOCA_OPEN_GRAPH_DESCRIPTION</description>
 	
@@ -38,7 +38,38 @@
 				<option value="2">PLG_SYSTEM_PHOCA_OPEN_GRAPH_PROPERTY</option>
 			</field>
 			
+			<field name="image" type="media" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_IMAGE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_IMAGE_DESC" />
+			
+			<field name="find_image_content" type="list" default="0" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_FIND_IMAGE_CONTENT_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_FIND_IMAGE_CONTENT_DESC">
+				<option value="1">PLG_SYSTEM_PHOCA_OPEN_GRAPH_YES</option>
+				<option value="0">PLG_SYSTEM_PHOCA_OPEN_GRAPH_NO</option>
+			</field>
+			
+			<field name="site_name" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_SITE_NAME_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_SITE_NAME_DESC" />
+			
+			<field name="enable_article" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_ENABLE_IN_ARTICLE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_ENABLE_IN_ARTICLE_DESC" />
+			
+			</fieldset>
+			
+			<fieldset name="tweets" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWEETS_WITH_CARDS_OPTIONS">
+			
+			<field name="twitter_enable" type="list" default="0" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_ENABLE_TWEETS_WITH_CARDS_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_ENABLE_TWEETS_WITH_CARDS_DESC">
+				<option value="1">PLG_SYSTEM_PHOCA_OPEN_GRAPH_YES</option>
+				<option value="0">PLG_SYSTEM_PHOCA_OPEN_GRAPH_NO</option>
+			</field>
+			
+			<field name="twitter_card" type="list" default="summary_large_image" label="PLG_CONTENT_PHOCA_OPEN_GRAPH_TWITTER_CARD_LABEL" description="PLG_CONTENT_PHOCA_OPEN_GRAPH_TWITTER_CARD_DESC">
+				<option value="summary_large_image">summary_large_image</option>
+				<option value="summary">summary</option>
+			</field>
+			
+			<field name="twitter_site" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWITTER_SITE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWITTER_SITE_DESC" />
+			<field name="twitter_creator" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWITTER_CREATOR_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWITTER_CREATOR_DESC" />
+			
 			</fieldset>
 		</fields>
 	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="updates"><![CDATA[https://raw.githubusercontent.com/PhocaCz/PhocaOpenGraphSystemPlugin/master/manifest.xml]]></server>
+	</updateservers>
 </extension>
