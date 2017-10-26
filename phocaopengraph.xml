@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension group="system" method="upgrade" type="plugin" version="3">
+	<name>plg_system_phoca_open_graph</name>
+	<creationDate>05/07/2016</creationDate>
+	<author>Jan Pavelka (www.phoca.cz)</author>
+	<authorEmail></authorEmail>
+	<authorUrl>www.phoca.cz</authorUrl>
+	<copyright>Jan Pavelka</copyright>
+	<license>GNU/GPL</license>
+	<version>3.0.0</version>
+	
+	<description>PLG_SYSTEM_PHOCA_OPEN_GRAPH_DESCRIPTION</description>
+	
+	<files>
+		<folder>models</folder>
+		<filename plugin="phocaopengraph">phocaopengraph.php</filename>
+		<filename >index.html</filename>
+	</files>
+	
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_phocaopengraph.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_phocaopengraph.sys.ini</language>
+	</languages>
+	
+	<administration>
+		<languages>
+			<language tag="en-GB">language/en-GB/en-GB.plg_system_phocaopengraph.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.plg_system_phocaopengraph.sys.ini</language>
+		</languages>
+	</administration>
+	
+<config>
+		<fields name="params" addfieldpath="/plugins/content/phocaopengraph/models/fields">
+			<fieldset name="main" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_MAIN_OPTIONS">	
+		
+			<field name="render_type" type="list" default="1" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_RENDER_TYPE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_RENDER_TYPE_DESC">
+				<option value="1">PLG_SYSTEM_PHOCA_OPEN_GRAPH_NAME</option>
+				<option value="2">PLG_SYSTEM_PHOCA_OPEN_GRAPH_PROPERTY</option>
+			</field>
+			
+			</fieldset>
+		</fields>
+	</config>
+</extension>
