@@ -2,8 +2,8 @@
 <updates>
 	<update>
 		<name>Phoca Open Graph System</name>
-		<description><![CDATA[ Phoca Open Graph System Plugin is Joomla! CMS extension. Plugin which adds open graph information and Tweets with Cards information into website. ]]></description>
-		<element>plg_system_phocaopengraph</element>
+		<description>Phoca Open Graph System Plugin is Joomla! CMS extension. Plugin which adds open graph information and Tweets with Cards information into website.</description>
+		<element>plg_system_phoca_open_graph</element>
 		<type>plugin</type>
 		<version>3.0.4</version>
 		<infourl title="Phoca Open Graph">http://www.phoca.cz/news</infourl>
@@ -13,12 +13,10 @@
 		<tags>
 			<tag>stable</tag>
 		</tags>
-		<maintainer>
-		<![CDATA[ Phoca.cz ]]>
-		</maintainer>
+		<maintainer>Phoca.cz</maintainer>
 		<maintainerurl>http://www.phoca.cz/</maintainerurl>
 		<section>Updates</section>
-		<targetplatform name="joomla" version=".*"/>
+		<targetplatform name="joomla" version="3.*"/>
 		<client>1</client>
 	</update>
 </updates>
