@@ -3,7 +3,7 @@
 	<update>
 		<name>Phoca Open Graph System</name>
 		<description>Phoca Open Graph System Plugin is Joomla! CMS extension. Plugin which adds open graph information and Tweets with Cards information into website.</description>
-		<element>plg_system_phoca_open_graph</element>
+		<element>plg_system_phocaopengraph</element>
 		<type>plugin</type>
 		<version>3.0.4</version>
 		<infourl title="Phoca Open Graph">http://www.phoca.cz/news</infourl>
