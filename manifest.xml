@@ -18,7 +18,7 @@
 		</maintainer>
 		<maintainerurl>http://www.phoca.cz/</maintainerurl>
 		<section>Updates</section>
-		<targetplatform name="joomla" version="3.8"/>
+		<targetplatform name="joomla" version=".*"/>
 		<client>1</client>
 	</update>
 </updates>
