@@ -79,7 +79,33 @@ class plgSystemPhocaOpenGraph extends JPlugin
 		if ($app->getName() != 'site') { return;}
 		
 		
-		// Allow to display in article
+		// Component included
+		$components 		= $this->params->get('components', array());
+		$component_filter 	= $this->params->get('component_filter', 1);//1 include 0 exclude
+		
+		if (!empty($components)) {
+			$cA	= explode(',', $components);
+			
+			if (empty($cA)) {
+				// No component set, ignore this rule
+			} else {
+				if ($component_filter == 0) {
+					// All except the selected
+					if (in_array($option, $cA)) {
+						return false;
+					}
+				} else {
+					// All selected
+					if (!in_array($option, $cA)) {
+						return false;
+					}
+				}
+			}
+		}
+		
+		
+		
+		// Articles allowed
 		$allowed		= 0;
 		$articleIds 		= $this->params->get('enable_article', '');
 		

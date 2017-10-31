@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension group="system" method="upgrade" type="plugin" version="3">
 	<name>plg_system_phoca_open_graph</name>
-	<creationDate>25/10/2017</creationDate>
+	<creationDate>31/10/2017</creationDate>
 	<author>Jan Pavelka (www.phoca.cz)</author>
 	<authorEmail></authorEmail>
 	<authorUrl>www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>3.0.3</version>
+	<version>3.0.4</version>
 	
 	<description>PLG_SYSTEM_PHOCA_OPEN_GRAPH_DESCRIPTION</description>
 	
@@ -49,6 +49,13 @@
 			
 			<field name="enable_article" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_ENABLE_IN_ARTICLE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_ENABLE_IN_ARTICLE_DESC" />
 			
+			<field name="components" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_COMPONENTS_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_COMPONENTS_DESC" />
+			
+			<field name="component_filter" type="radio" class="btn-group btn-group-yesno" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_COMPONENT_FILTER_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_COMPONENT_FILTER_DESC" size="1" default="1">
+	<option value="1">PLG_SYSTEM_PHOCA_OPEN_GRAPH_INCLUDE</option>
+	<option	value="0">PLG_SYSTEM_PHOCA_OPEN_GRAPH_EXCLUDE</option>
+</field>
+			
 			</fieldset>
 			
 			<fieldset name="tweets" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWEETS_WITH_CARDS_OPTIONS">
@@ -58,7 +65,7 @@
 				<option value="0">PLG_SYSTEM_PHOCA_OPEN_GRAPH_NO</option>
 			</field>
 			
-			<field name="twitter_card" type="list" default="summary_large_image" label="PLG_CONTENT_PHOCA_OPEN_GRAPH_TWITTER_CARD_LABEL" description="PLG_CONTENT_PHOCA_OPEN_GRAPH_TWITTER_CARD_DESC">
+			<field name="twitter_card" type="list" default="summary_large_image" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWITTER_CARD_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWITTER_CARD_DESC">
 				<option value="summary_large_image">summary_large_image</option>
 				<option value="summary">summary</option>
 			</field>
