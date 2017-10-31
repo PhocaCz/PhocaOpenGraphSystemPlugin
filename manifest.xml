@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <updates>
 	<update>
 		<name>Phoca Open Graph System</name>
@@ -18,6 +18,6 @@
 		<maintainerurl>http://www.phoca.cz/</maintainerurl>
 		<section>Updates</section>
 		<targetplatform name="joomla" version="3.*"/>
-		<client>1</client>
+		<client>site</client>
 	</update>
 </updates>
