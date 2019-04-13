@@ -14,7 +14,6 @@
 	<files>
 		<folder>models</folder>
 		<filename plugin="phocaopengraph">index.html</filename>
-		<filename plugin="phocaopengraph">manifest.xml</filename>
 		<filename plugin="phocaopengraph">phocaopengraph.php</filename>
 	</files>
 

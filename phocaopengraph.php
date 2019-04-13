@@ -57,7 +57,9 @@ class plgSystemPhocaOpenGraph extends JPlugin
 			
 			if ($change_svg_to_png == 1) {
 				$pathInfo 	= pathinfo($linkImg);
-				$linkImg 	= $pathInfo['dirname'] .'/'. $pathInfo['filename'] . '.png';
+				if (isset($pathInfo['extension']) && $pathInfo['extension'] == 'svg') {
+					$linkImg 	= $pathInfo['dirname'] .'/'. $pathInfo['filename'] . '.png';
+				}
 			}
 		}
 		
