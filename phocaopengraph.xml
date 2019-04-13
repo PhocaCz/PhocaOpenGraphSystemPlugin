@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension group="system" method="upgrade" type="plugin" version="3">
-	<name>plg_system_phoca_open_graph</name>
-	<creationDate>31/10/2017</creationDate>
+<extension type="plugin" group="system" method="upgrade" version="3">
+	<name>plg_system_phocaopengraph</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
+	<creationDate>13/04/2019</creationDate>
 	<authorEmail></authorEmail>
-	<authorUrl>www.phoca.cz</authorUrl>
+	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>3.0.4</version>
-	
-	<description>PLG_SYSTEM_PHOCA_OPEN_GRAPH_DESCRIPTION</description>
-	
+	<version>3.0.5</version>
+	<description>PLG_SYSTEM_PHOCAOPENGRAPH_DESCRIPTION</description>
+	<projectName>PhocaOpenGraphSystemPlugin</projectName>
+
 	<files>
 		<folder>models</folder>
+		<filename plugin="phocaopengraph">index.html</filename>
 		<filename plugin="phocaopengraph">phocaopengraph.php</filename>
-		<filename >index.html</filename>
 	</files>
-	
+
 	<languages>
 		<language tag="en-GB">language/en-GB/en-GB.plg_system_phocaopengraph.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.plg_system_phocaopengraph.sys.ini</language>
 	</languages>
-	
+
 	<administration>
 		<languages>
 			<language tag="en-GB">language/en-GB/en-GB.plg_system_phocaopengraph.ini</language>
@@ -29,7 +29,7 @@
 		</languages>
 	</administration>
 	
-<config>
+	<config>
 		<fields name="params" addfieldpath="/plugins/content/phocaopengraph/models/fields">
 			<fieldset name="main" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_MAIN_OPTIONS">	
 		
@@ -38,23 +38,28 @@
 				<option value="2">PLG_SYSTEM_PHOCA_OPEN_GRAPH_PROPERTY</option>
 			</field>
 			
-			<field name="image" type="media" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_IMAGE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_IMAGE_DESC" />
+			<field name="image" type="media" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_IMAGE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_IMAGE_DESC"/>
 			
 			<field name="find_image_content" type="list" default="0" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_FIND_IMAGE_CONTENT_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_FIND_IMAGE_CONTENT_DESC">
 				<option value="1">PLG_SYSTEM_PHOCA_OPEN_GRAPH_YES</option>
 				<option value="0">PLG_SYSTEM_PHOCA_OPEN_GRAPH_NO</option>
 			</field>
 			
-			<field name="site_name" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_SITE_NAME_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_SITE_NAME_DESC" />
+			<field name="site_name" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_SITE_NAME_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_SITE_NAME_DESC"/>
 			
-			<field name="enable_article" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_ENABLE_IN_ARTICLE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_ENABLE_IN_ARTICLE_DESC" />
+			<field name="enable_article" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_ENABLE_IN_ARTICLE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_ENABLE_IN_ARTICLE_DESC"/>
 			
-			<field name="components" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_COMPONENTS_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_COMPONENTS_DESC" />
+			<field name="components" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_COMPONENTS_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_COMPONENTS_DESC"/>
 			
 			<field name="component_filter" type="radio" class="btn-group btn-group-yesno" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_COMPONENT_FILTER_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_COMPONENT_FILTER_DESC" size="1" default="1">
 	<option value="1">PLG_SYSTEM_PHOCA_OPEN_GRAPH_INCLUDE</option>
-	<option	value="0">PLG_SYSTEM_PHOCA_OPEN_GRAPH_EXCLUDE</option>
+	<option value="0">PLG_SYSTEM_PHOCA_OPEN_GRAPH_EXCLUDE</option>
 </field>
+			
+			<field name="change_svg_to_png" type="list" default="0" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_CHANGE_SVG_TO_PNG_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_CHANGE_SVG_TO_PNG_DESC">
+				<option value="1">PLG_SYSTEM_PHOCA_OPEN_GRAPH_YES</option>
+				<option value="0">PLG_SYSTEM_PHOCA_OPEN_GRAPH_NO</option>
+			</field>
 			
 			</fieldset>
 			
@@ -70,13 +75,14 @@
 				<option value="summary">summary</option>
 			</field>
 			
-			<field name="twitter_site" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWITTER_SITE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWITTER_SITE_DESC" />
-			<field name="twitter_creator" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWITTER_CREATOR_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWITTER_CREATOR_DESC" />
+			<field name="twitter_site" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWITTER_SITE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWITTER_SITE_DESC"/>
+			<field name="twitter_creator" type="text" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWITTER_CREATOR_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_TWITTER_CREATOR_DESC"/>
 			
 			</fieldset>
 		</fields>
 	</config>
+
 	<updateservers>
-		<server type="extension" priority="1" name="updates"><![CDATA[https://raw.githubusercontent.com/PhocaCz/PhocaOpenGraphSystemPlugin/master/manifest.xml]]></server>
+		<server type="extension" name="PLG_SYSTEM_PHOCAOPENGRAPH" priority="1"><![CDATA[https://raw.githubusercontent.com/PhocaCz/PhocaOpenGraphSystemPlugin/master/manifest.xml]]></server>
 	</updateservers>
 </extension>

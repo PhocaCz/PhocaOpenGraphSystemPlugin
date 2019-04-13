@@ -1,23 +1,22 @@
-<?xml version="1.0"?>
 <updates>
 	<update>
-		<name>Phoca Open Graph System</name>
-		<description>Phoca Open Graph System Plugin is Joomla! CMS extension. Plugin which adds open graph information and Tweets with Cards information into website.</description>
+		<name><![CDATA[ Phoca Opent Graph System Plugin ]]></name>
+		<description><![CDATA[ Phoca Open Graph System Plugin is a Joomla! CMS Plugin. It allows adding of open graph information into site. Such information stored in meta tags can be then automatically displayed on e.g. Facebook while some visitor of the site commented e.g. article. ]]></description>
 		<element>phocaopengraph</element>
 		<folder>system</folder>
 		<type>plugin</type>
-		<version>3.0.4</version>
-		<infourl title="Phoca Open Graph">http://www.phoca.cz/news</infourl>
+		<version>3.0.5</version>
+		<infourl title="Phoca Opent Graph System Plugin 3.0.5">https://www.phoca.cz/</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaOpenGraphSystemPlugin/releases/download/3.0.4/plg_system_phocaopengraph_v3.0.4.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaOpenGraphSystemPlugin/releases/download/3.0.5/plg_system_phocaopengraph_v3.0.5.zip</downloadurl>
 		</downloads>
 		<tags>
 			<tag>stable</tag>
 		</tags>
-		<maintainer>Phoca.cz</maintainer>
-		<maintainerurl>http://www.phoca.cz/</maintainerurl>
+		<maintainer><![CDATA[ Phoca.cz ]]></maintainer>
+		<maintainerurl>https://www.phoca.cz/</maintainerurl>
 		<section>Updates</section>
-		<targetplatform name="joomla" version="3.*"/>
-		<client>site</client>
+		<targetplatform name="joomla" version="3.9"/>
+		<client>0</client>
 	</update>
 </updates>

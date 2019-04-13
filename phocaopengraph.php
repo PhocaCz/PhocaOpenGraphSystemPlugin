@@ -20,9 +20,55 @@ class plgSystemPhocaOpenGraph extends JPlugin
 		parent::__construct($subject, $config);
 	}
 	
+	public function setImage($image) {
+		
+		$change_svg_to_png 		= $this->params->get('change_svg_to_png', 0);
+		$linkImg 				= $image;
+		
+		$absU = 0;
+		// Test if this link is absolute http:// then do not change it
+		$pos1 			= strpos($image, 'http://');
+		if ($pos1 === false) {
+		} else {
+			$absU = 1;
+		}
+		
+		// Test if this link is absolute https:// then do not change it
+		$pos2 			= strpos($image, 'https://');
+		if ($pos2 === false) {
+		} else {
+			$absU = 1;
+		}
+
+		
+		if ($absU == 1) {
+			$linkImg = $image;
+		} else {
+			$linkImg = JURI::base(false).$image;
+			
+			if ($image[0] == '/') {
+				$myURI = new \Joomla\Uri\Uri(JURI::base(false));
+				$myURI->setPath($image);
+				$linkImg = $myURI->toString();
+				
+			} else {
+				$linkImg = JURI::base(false).$image;
+			}
+			
+			if ($change_svg_to_png == 1) {
+				$pathInfo 	= pathinfo($linkImg);
+				$linkImg 	= $pathInfo['dirname'] .'/'. $pathInfo['filename'] . '.png';
+			}
+		}
+		
+		return $linkImg;
+	}
+	
 	
 	public function renderTag($name, $value, $type = 1) {
+		
 		$document 	= JFactory::getDocument();
+		
 		$docType	= $document->getType();
 		if ($docType == 'pdf' || $docType == 'raw' || $docType == 'json') {
 			return;
@@ -188,43 +234,13 @@ class plgSystemPhocaOpenGraph extends JPlugin
 				
 				preg_match('/< *img[^>]*src *= *["\']?([^"\']*)/i', $docB, $src);
 				if (isset($src[1]) && $src[1] != '') {
-					
-					$absU = 0;
-					// Test if this link is absolute http:// then do not change it
-					$pos1 			= strpos($src[1], 'http://');
-					if ($pos1 === false) {
-					} else {
-						$absU = 1;
-					}
-					
-					// Test if this link is absolute https:// then do not change it
-					$pos2 			= strpos($src[1], 'https://');
-					if ($pos2 === false) {
-					} else {
-						$absU = 1;
-					}
-					
-					if ($absU == 1) {
-						$linkImg = $src[1];
-					} else {
-						$linkImg = JURI::base(false).$src[1];
-						if ($src[1][0] == '/') {
-							$myURI = new \Joomla\Uri\Uri(JURI::base(false));
-							$myURI->setPath($src[1]);
-							$linkImg = $myURI->toString();
-						} else {
-							$linkImg = JURI::base(false).$src[1];
-						}
-					}
-					
-					
-					$this->renderTag('og:image', $linkImg, $type);
+					$this->renderTag('og:image', $this->setImage($src[1]), $type);
 					$imgSet = 1;
 				}
 			}
 			
 			if ($this->params->get('image') != '' && $imgSet == 0) {
-				$this->renderTag('og:image', JURI::base(false).$this->params->get('image'), $type);
+				$this->renderTag('og:image', $this->setImage($this->params->get('image')), $type);
 			}
 		}
 	}
