@@ -4,7 +4,7 @@
 	"copyright": "Jan Pavelka",
 	"license": "GNU/GPL",
 	"projectName": "PhocaOpenGraphSystemPlugin",
-	"extensionName": "Phoca Opent Graph System Plugin",
+	"extensionName": "Phoca Open Graph System Plugin",
 	"projectInitials" : "OG",				  
 	"description": "Phoca Open Graph System Plugin is a Joomla! CMS Plugin. It allows adding of open graph information into site. Such information stored in meta tags can be then automatically displayed on e.g. Facebook while some visitor of the site commented e.g. article.",
 	"projectUrl": "https://www.phoca.cz/phoca-open-graph-system-plugin",
