@@ -227,10 +227,20 @@ class plgSystemPhocaOpenGraph extends JPlugin
 					$docB .=	(string)$buffer;
 				}
 
-				preg_match('/< *img[^>]*src *= *["\']?([^"\']*)/i', $docB, $src);
+				// First try to find the ready image - in data-image-meta tag
+				preg_match('/data-image-meta="([^"]*)"/i', $docB, $src);
 				if (isset($src[1]) && $src[1] != '') {
 					$this->renderTag('og:image', $this->setImage($src[1]), $type);
 					$imgSet = 1;
+				}
+
+				// If no image is ready, try to find it in content
+				if ($imgSet == 0) {
+					preg_match('/< *img[^>]*src *= *["\']?([^"\']*)/i', $docB, $src);
+					if (isset($src[1]) && $src[1] != '') {
+						$this->renderTag('og:image', $this->setImage($src[1]), $type);
+						$imgSet = 1;
+					}
 				}
 			}
 
