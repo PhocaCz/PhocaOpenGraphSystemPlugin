@@ -72,7 +72,7 @@ class plgSystemPhocaOpenGraph extends JPlugin
 		$document 	= JFactory::getDocument();
 
 		$docType	= $document->getType();
-		if ($docType == 'pdf' || $docType == 'raw' || $docType == 'json') {
+		if ($docType == 'pdf' || $docType == 'raw' || $docType == 'json' || $docType == 'xml') {
 			return;
 		}
 
