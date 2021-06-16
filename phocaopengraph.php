@@ -107,7 +107,7 @@ class plgSystemPhocaOpenGraph extends JPlugin
 		$view	= $app->input->get('view');
 		$format = $app->input->get('format');
 
-		if ($format == 'feed' || $format == 'pdf' || $format == 'json' || $format == 'raw') {
+		if ($format == 'feed' || $format == 'pdf' || $format == 'json' || $format == 'raw' || $format == 'xml') {
 			return true;
 		}
 

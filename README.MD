@@ -2,7 +2,7 @@
 
 
 
-![Phoca Open Graph System Plugin](https://github.com/PhocaCz/PhocaOpenGraphSystemPlugin/blob/master/phocaopengraph.png)
+![Phoca Open Graph System Plugin](https://github.com/PhocaCz/PhocaOpenGraphSystemPlugin/blob/master/phocaopengraph.png?raw=true)
 
 # Phoca Open Graph System Plugin
 
@@ -50,9 +50,13 @@ Phoca Open Graph System Plugin is a Joomla! CMS Plugin. It allows adding of open
 
 
 
+
+
+
+
 ## Version
 
-3.0.8
+3.0.9
 
 
 
