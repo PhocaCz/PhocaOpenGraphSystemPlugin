@@ -7,6 +7,9 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 
+use Joomla\CMS\Factory;
+use Joomla\CMS\Uri\Uri;
+
 defined( '_JEXEC' ) or die( 'Restricted access' );
 jimport( 'joomla.plugin.plugin' );
 
@@ -47,7 +50,7 @@ class plgSystemPhocaOpenGraph extends JPlugin
 			$linkImg = JURI::base(false).$image;
 
 			if ($image[0] == '/') {
-				$myURI = new \Joomla\Uri\Uri(JURI::base(false));
+				$myURI = Uri::getInstance(JURI::base(false));
 				$myURI->setPath($image);
 				$linkImg = $myURI->toString();
 
@@ -69,7 +72,7 @@ class plgSystemPhocaOpenGraph extends JPlugin
 
 	public function renderTag($name, $value, $type = 1) {
 
-		$document 	= JFactory::getDocument();
+		$document 	= Factory::getDocument();
 
 		$docType	= $document->getType();
 		if ($docType == 'pdf' || $docType == 'raw' || $docType == 'json' || $docType == 'xml') {
@@ -102,7 +105,7 @@ class plgSystemPhocaOpenGraph extends JPlugin
 	}
 
 	function onBeforeRender() {
-		$app 	= JFactory::getApplication();
+		$app 	= Factory::getApplication();
 		$option	= $app->input->get('option');
 		$view	= $app->input->get('view');
 		$format = $app->input->get('format');
@@ -176,8 +179,8 @@ class plgSystemPhocaOpenGraph extends JPlugin
 
 		if ($allowed > 0) {
 
-			$document 				= JFactory::getDocument();
-			$config 				= JFactory::getConfig();
+			$document 				= Factory::getDocument();
+			$config 				= Factory::getConfig();
 			$type					= $this->params->get('render_type', 1);
 			$this->twitterEnable 	= $this->params->get('twitter_enable', 0);
 			$twitterCard 			= $this->params->get('twitter_card', 'summary_large_image');
