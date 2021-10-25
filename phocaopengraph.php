@@ -23,6 +23,16 @@ class plgSystemPhocaOpenGraph extends JPlugin
 		parent::__construct($subject, $config);
 	}
 
+	// https://github.com/joomla/joomla-cms/issues/35871
+	function realCleanImageUrl($img) {
+
+		$imgClean = HTMLHelper::cleanImageURL($img);
+		if ($imgClean->url != '') {
+			$img =  $imgClean->url;
+		}
+		return $img;
+	}
+
 	public function setImage($image) {
 
 		$change_svg_to_png 		= $this->params->get('change_svg_to_png', 0);
@@ -233,7 +243,7 @@ class plgSystemPhocaOpenGraph extends JPlugin
 				// First try to find the ready image - in data-image-meta tag
 				preg_match('/data-image-meta="([^"]*)"/i', $docB, $src);
 				if (isset($src[1]) && $src[1] != '') {
-					$this->renderTag('og:image', $this->setImage($src[1]), $type);
+					$this->renderTag('og:image', $this->setImage($this->realCleanImageURL($src[1])), $type);
 					$imgSet = 1;
 				}
 
@@ -241,14 +251,14 @@ class plgSystemPhocaOpenGraph extends JPlugin
 				if ($imgSet == 0) {
 					preg_match('/< *img[^>]*src *= *["\']?([^"\']*)/i', $docB, $src);
 					if (isset($src[1]) && $src[1] != '') {
-						$this->renderTag('og:image', $this->setImage($src[1]), $type);
+						$this->renderTag('og:image', $this->setImage($this->realCleanImageURL($src[1])), $type);
 						$imgSet = 1;
 					}
 				}
 			}
 
 			if ($this->params->get('image') != '' && $imgSet == 0) {
-				$this->renderTag('og:image', $this->setImage($this->params->get('image')), $type);
+				$this->renderTag('og:image', $this->setImage($this->realCleanImageURL($this->params->get('image'))), $type);
 			}
 		}
 	}

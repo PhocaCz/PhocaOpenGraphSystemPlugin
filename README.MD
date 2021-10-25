@@ -56,7 +56,7 @@ Phoca Open Graph System Plugin is a Joomla! CMS Plugin. It allows adding of open
 
 ## Version (Joomla! 4.x)
 
-4.0.0
+4.0.1
 
 
 
