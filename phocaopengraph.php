@@ -8,6 +8,7 @@
  */
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Uri\Uri;
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
@@ -57,15 +58,15 @@ class plgSystemPhocaOpenGraph extends JPlugin
 		if ($absU == 1) {
 			$linkImg = $image;
 		} else {
-			$linkImg = JURI::base(false).$image;
+			$linkImg = Uri::base(false).$image;
 
 			if ($image[0] == '/') {
-				$myURI = Uri::getInstance(JURI::base(false));
+				$myURI = Uri::getInstance(Uri::base(false));
 				$myURI->setPath($image);
 				$linkImg = $myURI->toString();
 
 			} else {
-				$linkImg = JURI::base(false).$image;
+				$linkImg = Uri::base(false).$image;
 			}
 
 			if ($change_svg_to_png == 1) {
