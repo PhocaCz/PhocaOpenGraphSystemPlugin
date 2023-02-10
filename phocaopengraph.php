@@ -91,7 +91,7 @@ class plgSystemPhocaOpenGraph extends JPlugin
 		}
 
 		// Encoded html tags can still be rendered, decode and strip tags first.
-		$value                  = strip_tags(html_entity_decode($value));
+		$value                  = strip_tags(html_entity_decode((string)$value));
 
 		// OG
 
@@ -221,7 +221,8 @@ class plgSystemPhocaOpenGraph extends JPlugin
 			}
 			$this->renderTag('og:title', $document->title, $type);
 			$this->renderTag('og:description', $document->description, $type);
-			$this->renderTag('og:url', $document->base, $type);
+			//$this->renderTag('og:url', $document->base, $type);
+			$this->renderTag('og:url', JUri::current(), $type);
 			$this->renderTag('og:type', 'website', $type);
 
 
