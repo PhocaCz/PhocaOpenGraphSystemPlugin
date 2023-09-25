@@ -196,7 +196,7 @@ class plgSystemPhocaOpenGraph extends JPlugin
 
 			$document 				= Factory::getDocument();
 			$config 				= Factory::getConfig();
-			$type					= $this->params->get('render_type', 1);
+			$type					= $this->params->get('render_type', 2);
 			$this->twitterEnable 	= $this->params->get('twitter_enable', 0);
 			$twitterCard 			= $this->params->get('twitter_card', 'summary_large_image');
 

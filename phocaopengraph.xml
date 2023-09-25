@@ -2,12 +2,12 @@
 <extension type="plugin" group="system" method="upgrade" version="4.0">
 	<name>plg_system_phocaopengraph</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>11/02/2023</creationDate>
+	<creationDate>25/09/2023</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>4.0.6</version>
+	<version>4.0.7</version>
 	<description>PLG_SYSTEM_PHOCAOPENGRAPH_DESCRIPTION</description>
 	<projectName>PhocaOpenGraphSystemPlugin</projectName>
 
@@ -34,7 +34,7 @@
 		<fields name="params" addfieldpath="/plugins/content/phocaopengraph/models/fields">
 			<fieldset name="main" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_MAIN_OPTIONS">
 
-			<field name="render_type" type="list" default="1" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_RENDER_TYPE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_RENDER_TYPE_DESC">
+			<field name="render_type" type="list" default="2" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_RENDER_TYPE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_RENDER_TYPE_DESC">
 				<option value="1">PLG_SYSTEM_PHOCA_OPEN_GRAPH_NAME</option>
 				<option value="2">PLG_SYSTEM_PHOCA_OPEN_GRAPH_PROPERTY</option>
 			</field>
