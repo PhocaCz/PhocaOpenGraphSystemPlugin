@@ -31,7 +31,6 @@
 		<downloads>
 			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaOpenGraphSystemPlugin/releases/download/4.0.7/plg_system_phocaopengraph_v4.0.7.zip</downloadurl>
 		</downloads>
-		<sha512>eedad2f9d74cfffc8ece57cb02a69ce60e301093205dab94d8bee69a5a092269d8f7524a2aec9648f150dccd52fbba84f321f4551d6aa09ca83e173f0295105f</sha512>
 		<tags>
 			<tag>stable</tag>
 		</tags>
@@ -39,6 +38,27 @@
 		<maintainerurl>https://www.phoca.cz/</maintainerurl>
 		<section>Updates</section>
 		<targetplatform name="joomla" version="4\.*"/>
+		<client>site</client>
+	</update>
+	<update>
+		<name><![CDATA[ Phoca Open Graph System Plugin ]]></name>
+		<description><![CDATA[ Phoca Open Graph System Plugin is a Joomla! CMS Plugin. It allows adding of open graph information into site. Such information stored in meta tags can be then automatically displayed on e.g. Facebook while some visitor of the site commented e.g. article. ]]></description>
+		<element>phocaopengraph</element>
+		<folder>system</folder>
+		<type>plugin</type>
+		<version>5.0.0</version>
+		<infourl title="Phoca Open Graph System Plugin 5.0.0">https://www.phoca.cz/</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaOpenGraphSystemPlugin/releases/download/5.0.0/plg_system_phocaopengraph_v5.0.0.zip</downloadurl>
+		</downloads>
+		<sha512>39e3f87f448b8e7c47ccad188522e6811cea9b2f34c363260b6dc6f8ef5b1d39e51ab686ff7b6b5dddf539537e2b86edf12e24faf2fc6e80dfd083a6cef4f6f0</sha512>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer><![CDATA[ Phoca.cz ]]></maintainer>
+		<maintainerurl>https://www.phoca.cz/</maintainerurl>
+		<section>Updates</section>
+		<targetplatform name="joomla" version="(4|5)\.*"/>
 		<client>site</client>
 	</update>
 </updates>

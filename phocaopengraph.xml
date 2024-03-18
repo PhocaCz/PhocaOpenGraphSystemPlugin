@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="plugin" group="system" method="upgrade" version="4.0">
+<extension type="plugin" group="system" method="upgrade" version="5.0">
 	<name>plg_system_phocaopengraph</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>25/09/2023</creationDate>
+	<creationDate>10/12/2023</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>4.0.7</version>
+	<version>5.0.0</version>
 	<description>PLG_SYSTEM_PHOCAOPENGRAPH_DESCRIPTION</description>
 	<projectName>PhocaOpenGraphSystemPlugin</projectName>
 
@@ -38,6 +38,11 @@
 				<option value="1">PLG_SYSTEM_PHOCA_OPEN_GRAPH_NAME</option>
 				<option value="2">PLG_SYSTEM_PHOCA_OPEN_GRAPH_PROPERTY</option>
 			</field>
+
+				<field name="display_itemprop_image" type="list" default="1" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_DISPLAY_ITEMPROP_IMAGE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_DISPLAY_ITEMPROP_IMAGE_DESC">
+                    <option value="0">PLG_SYSTEM_PHOCA_OPEN_GRAPH_NO</option>
+                    <option value="1">PLG_SYSTEM_PHOCA_OPEN_GRAPH_YES</option>
+                </field>
 
 			<field name="image" type="media" default="" label="PLG_SYSTEM_PHOCA_OPEN_GRAPH_IMAGE_LABEL" description="PLG_SYSTEM_PHOCA_OPEN_GRAPH_IMAGE_DESC"/>
 

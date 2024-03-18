@@ -9,13 +9,14 @@
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Uri\Uri;
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 jimport( 'joomla.plugin.plugin' );
 
 
-class plgSystemPhocaOpenGraph extends JPlugin
+class plgSystemPhocaOpenGraph extends CMSPlugin
 {
 
 	public $twitterEnable 	= 0;
@@ -85,6 +86,8 @@ class plgSystemPhocaOpenGraph extends JPlugin
 
 		$document 	= Factory::getDocument();
 
+		$display_itemprop_image 				= $this->params->get('display_itemprop_image', 1);
+
 		$docType	= $document->getType();
 		if ($docType == 'pdf' || $docType == 'raw' || $docType == 'json' || $docType == 'xml') {
 			return;
@@ -99,7 +102,7 @@ class plgSystemPhocaOpenGraph extends JPlugin
 			$document->setMetadata(htmlspecialchars($name, ENT_COMPAT, 'UTF-8'), htmlspecialchars($value, ENT_COMPAT, 'UTF-8'));
 		} else {
 			$attributes = '';
-			if ($name == 'og:image') {
+			if ($name == 'og:image' && $display_itemprop_image == 1) {
 				$attributes = ' itemprop="image"';
 			}
 			$document->addCustomTag('<meta property="'.htmlspecialchars($name, ENT_COMPAT, 'UTF-8').'"'.$attributes.' content="' . htmlspecialchars($value, ENT_COMPAT, 'UTF-8') . '" />');
@@ -222,7 +225,7 @@ class plgSystemPhocaOpenGraph extends JPlugin
 			$this->renderTag('og:title', $document->title, $type);
 			$this->renderTag('og:description', $document->description, $type);
 			//$this->renderTag('og:url', $document->base, $type);
-			$this->renderTag('og:url', JUri::current(), $type);
+			$this->renderTag('og:url', Uri::current(), $type);
 			$this->renderTag('og:type', 'website', $type);
 
 

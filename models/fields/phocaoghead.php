@@ -8,12 +8,14 @@
  */
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\Form\FormField;
+use Joomla\CMS\Language\Text;
 
 defined('JPATH_BASE') or die;
 jimport('joomla.html.html');
 jimport('joomla.form.formfield');
 
-class JFormFieldPhocaOGHead extends JFormField
+class JFormFieldPhocaOGHead extends FormField
 {
 	protected $type = 'PhocaOGHead';
 
@@ -39,12 +41,12 @@ class JFormFieldPhocaOGHead extends JFormField
 				.'<table border="0"><tr>'
 				.'<td valign="middle" align="center">'. $image.'</td>'
 				.'<td valign="middle" align="center">'
-				.'<strong>'. JText::_($this->element['default']) . '</strong></td>'
+				.'<strong>'. Text::_($this->element['default']) . '</strong></td>'
 				.'</tr></table>'
 				.'</div>';
 			} else {
 				return '<div class="ph-options-head">'
-				.'<strong>'. JText::_($this->element['default']) . '</strong>'
+				.'<strong>'. Text::_($this->element['default']) . '</strong>'
 				.'</div>';
 			}
 		} else {
