@@ -46,12 +46,12 @@
 		<element>phocaopengraph</element>
 		<folder>system</folder>
 		<type>plugin</type>
-		<version>5.0.0</version>
-		<infourl title="Phoca Open Graph System Plugin 5.0.0">https://www.phoca.cz/</infourl>
+		<version>5.0.1</version>
+		<infourl title="Phoca Open Graph System Plugin 5.0.1">https://www.phoca.cz/</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaOpenGraphSystemPlugin/releases/download/5.0.0/plg_system_phocaopengraph_v5.0.0.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaOpenGraphSystemPlugin/releases/download/5.0.1/plg_system_phocaopengraph_v5.0.1.zip</downloadurl>
 		</downloads>
-		<sha512>39e3f87f448b8e7c47ccad188522e6811cea9b2f34c363260b6dc6f8ef5b1d39e51ab686ff7b6b5dddf539537e2b86edf12e24faf2fc6e80dfd083a6cef4f6f0</sha512>
+		<sha512>e2b32e96b86f818a31f1a2ea573df430a1c90d39cc985c34ae632ab6304bf2a599416d2514c651f64c56f6350df46e0016baa6dd62bd394baae2aa7d737e6376</sha512>
 		<tags>
 			<tag>stable</tag>
 		</tags>

@@ -86,7 +86,7 @@ class plgSystemPhocaOpenGraph extends CMSPlugin
 
 		$document 	= Factory::getDocument();
 
-		$display_itemprop_image 				= $this->params->get('display_itemprop_image', 1);
+		$display_itemprop_image 				= $this->params->get('display_itemprop_image', 0);
 
 		$docType	= $document->getType();
 		if ($docType == 'pdf' || $docType == 'raw' || $docType == 'json' || $docType == 'xml') {
@@ -97,15 +97,18 @@ class plgSystemPhocaOpenGraph extends CMSPlugin
 		$value                  = strip_tags(html_entity_decode((string)$value));
 
 		// OG
-
-		if ($type == 1) {
-			$document->setMetadata(htmlspecialchars($name, ENT_COMPAT, 'UTF-8'), htmlspecialchars($value, ENT_COMPAT, 'UTF-8'));
+		$attributes = '';
+		if ($name == 'og:image' && $display_itemprop_image == 1) {
+			$attributes = ' itemprop="image"';
+		}
+		$typeString = 'name';
+		if ($type != 1) {
+			$typeString = 'property';
+		}
+		if ($attributes != '') {
+			$document->addCustomTag('<meta '.$typeString.'="'.htmlspecialchars($name, ENT_COMPAT, 'UTF-8').'"'.$attributes.' content="' . htmlspecialchars($value, ENT_COMPAT, 'UTF-8') . '" />');
 		} else {
-			$attributes = '';
-			if ($name == 'og:image' && $display_itemprop_image == 1) {
-				$attributes = ' itemprop="image"';
-			}
-			$document->addCustomTag('<meta property="'.htmlspecialchars($name, ENT_COMPAT, 'UTF-8').'"'.$attributes.' content="' . htmlspecialchars($value, ENT_COMPAT, 'UTF-8') . '" />');
+			$document->setMetadata(htmlspecialchars($name, ENT_COMPAT, 'UTF-8'), htmlspecialchars($value, ENT_COMPAT, 'UTF-8'), $typeString);
 		}
 
 		// Tweet with cards
