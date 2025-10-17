@@ -127,9 +127,9 @@ class plgSystemPhocaOpenGraph extends CMSPlugin
 
 	function onBeforeRender() {
 		$app 	= Factory::getApplication();
-		$option	= $app->input->get('option');
-		$view	= $app->input->get('view');
-		$format = $app->input->get('format');
+		$option	= $app->getInput()->get('option');
+		$view	= $app->getInput()->get('view');
+		$format = $app->getInput()->get('format');
 
 		if ($format == 'feed' || $format == 'pdf' || $format == 'json' || $format == 'raw' || $format == 'xml') {
 			return true;
@@ -180,7 +180,7 @@ class plgSystemPhocaOpenGraph extends CMSPlugin
 			if ($articleIds != '') {
 				$articleIdsA =  explode(',', $articleIds);
 				if (!empty($articleIdsA)) {
-					$articleId	= $app->input->get('id', 0, 'int');
+					$articleId	= $app->getInput()->get('id', 0, 'int');
 					foreach ($articleIdsA as $k => $v) {
 						if ($option == 'com_content' && (int)$articleId > 0 &&(int)$articleId == (int)$v) {
 							//$articleAllowed = (int)$articleId;
